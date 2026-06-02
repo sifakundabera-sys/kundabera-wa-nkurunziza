@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sifa Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      background:#111827;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      z-index:1000;
+      box-shadow:0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    section{
+      min-height:100vh;
+      padding:120px 10%;
+    }
+
+    .home{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:40px;
+    }
+
+    .home-text{
+      flex:1;
+    }
+
+    .home-text h1{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .home-text h3{
+      color:#38bdf8;
+      margin-bottom:20px;
+      font-size:30px;
+    }
+
+    .home-text p{
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 25px;
+      background:#38bdf8;
+      color:black;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+      margin-right:10px;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:white;
+    }
+
+    .home-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .home-image img{
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      border:5px solid #38bdf8;
+      object-fit:cover;
+      box-shadow:0 0 20px #38bdf8;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:40px;
+      color:#38bdf8;
+    }
+
+    .about-container{
+      display:flex;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .about-container img{
+      width:300px;
+      border-radius:20px;
+      box-shadow:0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .about-text{
+      flex:1;
+      line-height:1.8;
+    }
+
+    .skills{
+      margin-top:20px;
+    }
+
+    .skills span{
+      display:inline-block;
+      background:#1e293b;
+      padding:10px 15px;
+      border-radius:8px;
+      margin:8px;
+      border:1px solid #38bdf8;
+    }
+
+    .services-container,
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      text-align:center;
+      box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px #38bdf8;
+    }
+
+    .card h3{
+      margin:15px 0;
+      color:#38bdf8;
+    }
+
+    .project-img{
+      width:100%;
+      border-radius:15px;
+      margin-bottom:15px;
+    }
+
+    .contact form{
+      max-width:600px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .contact input,
+    .contact textarea{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      font-size:16px;
+    }
+
+    .contact button{
+      padding:15px;
+      background:#38bdf8;
+      border:none;
+      border-radius:10px;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .contact button:hover{
+      background:white;
+    }
+
+    footer{
+      background:#111827;
+      text-align:center;
+      padding:20px;
+    }
+
+    @media(max-width:900px){
+      .home{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .home-text h1{
+        font-size:45px;
+      }
+
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Sifa Portfolio</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+
+    <div class="home-text">
+      <h1>Hello, I'm Sifa</h1>
+      <h3>Web Developer & Graphic Designer</h3>
+
+      <p>
+        I create beautiful websites, modern UI designs, logos,
+        and responsive web applications for businesses and personal brands.
+      </p>
+
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+
+    <div class="home-image">
+      <img src="hy.png" alt="profile">
+    </div>
+
+  </section>
+
+  <section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-container">
+
+      <img src="hy.png" alt="about image">
+
+      <div class="about-text">
+
+        <p>
+          I am a passionate web developer and designer who loves creating modern,
+          fast, and attractive websites. I help businesses and individuals build
+          professional online presence.
+        </p>
+
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Vue.js</span>
+          <span>Graphic Design</span>
+          <span>UI/UX Design</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="services">
+
+    <h2 class="title">My Services</h2>
+
+    <div class="services-container">
+
+      <div class="card">
+        <h3>Website Design</h3>
+        <p>
+          Creating beautiful and responsive websites for all devices.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>
+          Designing logos, posters, flyers, and social media graphics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>
+          Building user-friendly interfaces with modern user experience.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop" alt="project">
+
+        <h3>Business Website</h3>
+        <p>Modern responsive business website.</p>
+      </div>
+
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1170&auto=format&fit=crop" alt="project">
+
+        <h3>Portfolio Website</h3>
+        <p>Creative personal portfolio design.</p>
+      </div>
+
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1170&auto=format&fit=crop" alt="project">
+
+        <h3>Graphic Project</h3>
+        <p>Professional logo and branding project.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+    <h2 class="title">Contact Me</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="6" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Sifa Portfolio | All Rights Reserved</p>
+  </footer>
+
+  <script>
+
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Message Sent Successfully!');
+      form.reset();
+    });
+
+  </script>
+<h2>information   </h2>
+<p> TEL:0790777497 </P>
+<P>email:sifakundabera@gmail.com </p>
+<p> prepared by KUNDABERA SIFA </p>
+# simple_bot_english.py
+import time
+
+# English configuration
+GITHUB_URL = "https://github.com/username/your-game-project"
+TRIGGER_WORDS = ["portfolio", "demo", "project", "game", "source", "code"]
+
+def simulate_instagram_comments():
+    """Simulate checking comments (for testing)"""
+    
+    print("🤖 Instagram Auto-Reply Monitor Started")
+    print(f"Listening for: {', '.join(TRIGGER_WORDS)}")
+    print("-" * 40)
+    
+    # Simulated comments for testing
+    test_comments = [
+        {"user": "john_doe", "text": "Can you share the portfolio?"},
+        {"user": "game_lover", "text": "Nice demo! send code please"},
+        {"user": "dev_fan", "text": "Where is the GitHub link?"}
+    ]
+    
+    for comment in test_comments:
+        comment_lower = comment["text"].lower()
+        
+        if any(word in comment_lower for word in TRIGGER_WORDS):
+            print(f"✅ Detected request from @{comment['user']}")
+            print(f"   Comment: {comment['text']}")
+            print(f"   Auto-reply: 'Here's my project: {GITHUB_URL}'")
+            print("-" * 40)
+        
+        time.sleep(1)
+
+if __name__ == "__main__":
+    simulate_instagram_comments()
+</body>
+</html>
