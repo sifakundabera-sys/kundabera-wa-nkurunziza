@@ -400,39 +400,42 @@
 <p> TEL:0790777497 </P>
 <P>email:sifakundabera@gmail.com </p>
 <p> prepared by KUNDABERA SIFA </p>
-# simple_bot_english.py
-import time
+<div class="instagram-box">
+<a href="https://instagram.com/USERNAME_kundaberasifa" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+<span>Chat with us on Instagram</span>
+</a>
+</div>
 
-# English configuration
-GITHUB_URL = "https://github.com/username/your-game-project"
-TRIGGER_WORDS = ["portfolio", "demo", "project", "game", "source", "code"]
+<style>
+.instagram-box{
+display:flex;
+justify-content:center;
+margin-top:20px;
+}
 
-def simulate_instagram_comments():
-    """Simulate checking comments (for testing)"""
-    
-    print("🤖 Instagram Auto-Reply Monitor Started")
-    print(f"Listening for: {', '.join(TRIGGER_WORDS)}")
-    print("-" * 40)
-    
-    # Simulated comments for testing
-    test_comments = [
-        {"user": "john_doe", "text": "Can you share the portfolio?"},
-        {"user": "game_lover", "text": "Nice demo! send code please"},
-        {"user": "dev_fan", "text": "Where is the GitHub link?"}
-    ]
-    
-    for comment in test_comments:
-        comment_lower = comment["text"].lower()
-        
-        if any(word in comment_lower for word in TRIGGER_WORDS):
-            print(f"✅ Detected request from @{comment['user']}")
-            print(f"   Comment: {comment['text']}")
-            print(f"   Auto-reply: 'Here's my project: {GITHUB_URL}'")
-            print("-" * 40)
-        
-        time.sleep(1)
+.instagram-box a{
+display:flex;
+align-items:center;
+gap:10px;
+background:#E1306C;
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
 
-if __name__ == "__main__":
-    simulate_instagram_comments()
+.instagram-box a:hover{
+transform:scale(1.05);
+}
+
+.instagram-box img{
+width:30px;
+height:30px;
+}
+
+</style>
 </body>
 </html>
